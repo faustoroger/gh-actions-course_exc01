@@ -1,4 +1,4 @@
-name: Lint, Test and Deploy Project
+name: Lint, Test and Deploy Exercise 01
 on: [push, workflow_dispatch]
 jobs:
   lint:
@@ -28,7 +28,7 @@ jobs:
         run: npm ci # Or can use npm install
       - name: Run test
         run: npm run test
-  build:
+  deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -42,3 +42,5 @@ jobs:
         run: npm ci # Or can use npm install
       - name: Build project
         run: npm run build
+      - name: Deploy code
+        run: echo "Deploying..."
