@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
-        uses: action/checkout@v4
+        uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -15,14 +15,14 @@ jobs:
         run: npm ci # Or can use npm install
       - name: Run lint
         uses: npm run lint
-      
+
   test:
     needs: lint
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
-        uses: action/checkout@v4
+        uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
-        uses: action/checkout@v4
+        uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
